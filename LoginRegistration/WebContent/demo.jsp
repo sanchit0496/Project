@@ -49,7 +49,7 @@ body {margin:0;}
   font-weight:600;
 }
 .spacer{
-  height:590px;
+  height:410px;
 }
 .info{
   background-color:white;
@@ -59,17 +59,21 @@ body {margin:0;}
   z-index: 15;
   top: 50%;
   left: 50%;
-  margin: -100px 0 0 -250px;
+  margin-top:-10%;
+ margin-left:-25%;
+ margin-right:20%;
+ margin-bottom:5%;
   padding:40px;
+  max-height:45%;
 }
 .info h1{
   color:black;
   font-family: 'Expletus Sans', cursive;
-  font-size:740%;
+  font-size:460%;
   margin-top:-1%;
 }
 .info h3{
-  font-size:135%;
+  font-size:125%;
   margin-top:-10%;
 }
 .book{
@@ -77,10 +81,10 @@ body {margin:0;}
   border-radius:5px;
   background-color:white;
   padding:15px;
-  width:60%;
   cursor:pointer;
   font-weight:600;
-  font-size:145%;
+  font-size:105%;
+  margin-top:-5%;
 }
 .book:hover{
   border:2px solid powderblue;
@@ -357,11 +361,10 @@ td{width:50%; text-align:center;}
 
   <div id="logregn">
      
-     
-     
-
-    <div class="grid-container0">
-    <div class="item01">
+     <table style="width:100%;">
+  <tr>
+	<td style="width:30%;">
+	<div class="item01">
       <center><h1 style="font-size:180%;margin-left:15%;">About Us</h1></center>
      <p>Our team has access to an extensive range of aircraft from the world’s leading manufacturers, and only select aircraft which meet and surpass the highest standards of safety, performance, design and luxury. <br><br>We meticulously manage all flights; our clients are assigned a Personal Manager, available 24 hours a day, to supervise all travel arrangements.
       <br><br>
@@ -369,42 +372,64 @@ td{width:50%; text-align:center;}
       </p>
 
       </div>
-      
-    <div class="item02">
+	</td>
+    <td style="width:70%;">
+      <div class="item02">
       <center><h1 style="font-size:180%;margin-left:15%;margin-bottom:25px;">Login or Register Here</h1></center>
 
       <div id="flip1" style="cursor:pointer;">
      Click Here to Register</div>
 <div id="panel1" style="display:none;">
 
-<div class="grid-container1">
-    <div class="item1 a">First Name</div>
-    <div class="item2 i"><input type="text"></div>
-    <div class="item3 a">Last Name</div>
-    <div class="item4 i"><input type="text"></div>
-    <div class="item5 a">Age</div>
-    <div class="item6 i"><input type="text"></div>
-    <div class="item7 a">Gender</div>
-    <div class="item8 i">
-      <select style="height:20px;width:115px; height:25px;
-  border-top:0px;
-  border-left:1.5px solid black;
-  border-right:1.5px solid black;
-  border-bottom:1.5px solid black;">
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-      </select>
-  </div>
-    <div class="item9 a">Contact Number</div>
-    <div class="item10 i"><input type="text"></div>                     
-    <div class="item11 a">UserId</div>
-    <div class="item12 i"><input type="text"></div>
-    <div class="item13 a">Password</div>
-    <div class="item14 i"><input type="password"></div>
-</div>
-   <center>
-  <input class="regbtn" type="button" value="Register">
-  </center>
+<form name="form" action="RegisterServlet" method="post" onsubmit="return validate()">
+<table align="center">
+ <tr>
+ <td>First Name</td>
+ <td><input type="text" name="firstname" /></td>
+ </tr>
+ <tr>
+ <td>Last Name</td>
+ <td><input type="text" name="lastname" /></td>
+ </tr>
+ <tr>
+ <td>Age</td>
+ <td><input type="text" name="age" /></td>
+ </tr>
+  <tr>
+ <td>Gender</td>
+ <td><input type="text" name="gender" /></td>
+ </tr>
+  <tr>
+ <td>Contact Number</td>
+ <td><input type="text" name="contactnumber" /></td>
+ </tr>
+  <tr>
+ <td>UserId</td>
+ <td><input type="text" name="userid" /></td>
+ </tr>
+  <tr>
+ <td>Password</td>
+ <td><input type="text" name="password" /></td>
+ </tr>
+ <tr>
+ <tr>
+ <td>Confirm Password</td>
+ <td><input type="text" name="conpassword" /></td>
+ </tr>
+ <tr>
+ <tr>
+ <td><%=(request.getAttribute("errMessage") == null) ? ""
+ : request.getAttribute("errMessage")%></td>
+ </tr>
+
+ 
+ 
+</table>
+
+ <input class="regbtn" type="submit" value="Register"></input><input
+ type="reset" class="regbtn" value="Reset"></input>
+</form>
+  
 </div>
 
 <div id="flip2" style="cursor:pointer;">Click Here to Login</div>
@@ -430,9 +455,9 @@ td{width:50%; text-align:center;}
 </div>
     
 </div>
-  
-      
-    </div>
+    </td>
+  </tr>
+	</table>
 </div>
     
   
@@ -460,15 +485,23 @@ td{width:50%; text-align:center;}
     </div>
     
   <footer id="contactus">
-    <div class="grid-containerf">
-    <div class="itemf01">
+  
+  <table style="width:100%; border:1px solid black;">
+  <tr>
+	<td>
+	<div class="itemf01">
       	&copy; Cognizant Technology Solutions Internship Program - 2019
       </div>
+	</td>
+    <td>
     <div class="itemf02">
       <i class="fab fa-facebook-f"></i> <i class="fab fa-instagram"></i> <i class="fab fa-youtube"></i> <i class="fab fa-whatsapp"></i></i>
       </div>
-</div>
-  </footer>
+    </td>
+  </tr>
+  
+</table>
+ </footer>
   
 
 </body>
