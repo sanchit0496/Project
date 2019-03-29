@@ -21,6 +21,9 @@ public class BookingDao
 		String zipcode = bookingBean.getZipcode();
 		String numberofpassengers = bookingBean.getNumberofpassengers();
 		String destination = bookingBean.getDestination();
+		
+	
+		
 		System.out.println(gender);
 
 		Connection con = null;

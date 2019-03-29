@@ -38,6 +38,6 @@ public String authenticateUser(AdminBean adminbean){
 		{
 			e.printStackTrace();
 		}
-		return "Invalid user credentials"; 
+		return "Invalid admin credentials"; 
 	}
 }

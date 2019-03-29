@@ -15,6 +15,7 @@ public class BookingBean
 	private String zipcode;
 	private String numberofpassengers;
 	private String destination;
+	
 
 	public String getDestination() {
 		return destination;

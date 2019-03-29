@@ -28,7 +28,7 @@ public class RegisterServlet extends HttpServlet {
 		String contactnumber = request.getParameter("contactnumber");
 		String userid = request.getParameter("userid");
 		String password = request.getParameter("password");
-		String aadhar = request.getParameter("aadhar");
+		
 		
 		RegisterBean registerBean = new RegisterBean();
 	
@@ -39,19 +39,20 @@ public class RegisterServlet extends HttpServlet {
 		registerBean.setContactnumber(contactnumber);
 		registerBean.setUserid(userid);
 		registerBean.setPassword(password); 
-		registerBean.setAadhar(aadhar); 
+	
 		
 		RegisterDao registerDao = new RegisterDao();
 		
 		String userRegistered = registerDao.registerUser(registerBean);
 		if(userRegistered.equals("SUCCESS"))   //On success, you can display a message to user on Home page
 		{
-			request.getRequestDispatcher("/Home.jsp").forward(request, response);
+			request.getRequestDispatcher("successfullyregistered.jsp").forward(request, response);
+		
 		}
 		else   
 		{
 			request.setAttribute("errMessage", userRegistered);
-			request.getRequestDispatcher("/Register.jsp").include(request, response);
+			request.getRequestDispatcher("/home.jsp").include(request, response);
 		}
 	}
 

@@ -7,13 +7,6 @@ public class RegisterBean {
 	private String gender;
 	private String contactnumber;
 	private String userid;
-	private String aadhar;
-	public String getAadhar() {
-		return aadhar;
-	}
-	public void setAadhar(String aadhar) {
-		this.aadhar = aadhar;
-	}
 	private String password;
 	private String conpassword;
 	public String getFirstname() {

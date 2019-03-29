@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
 		else
 		{
 			request.setAttribute("errMessage", userValidate); 
-			request.getRequestDispatcher("/Login.jsp").forward(request, response);
+			request.getRequestDispatcher("/home.jsp").forward(request, response);
 		}
 		
 		

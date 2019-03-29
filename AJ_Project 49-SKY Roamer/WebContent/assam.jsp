@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<link href="https://fonts.googleapis.com/css?family=Expletus+Sans|Megrim|Nunito+Sans|Sarabun" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <html>
 <head>
 <title>Assam</title>
@@ -65,16 +67,45 @@ h4{
 color:blue;
 font-size:105%;
 }
+footer{
+  background-color:black;
+  color:white;
+  padding:20px;
+}
+.grid-containerf{
+    display: grid;
+    grid-gap: 3px;
+    grid-template-rows: repeat(12,1fr);
+    grid-template-columns: repeat(12,1fr);
+    text-align: center;
+}
+
+.itemf01{
+    grid-column: 1/7;
+    grid-row: 1/13;
+  font-family: 'Sarabun', sans-serif;
+  font-size:120%;
+}
+.itemf02{
+    grid-column: 7/13;
+    grid-row: 1/13;
+  margin-left:30%;
+}
+.itemf02 i{
+  font-size:240%;
+  margin-left:15px;
+  margin-right:15px;
+  cursor:pointer;
+}
 </style>
 <body>
 <div class="navbar">
-  <a href="#home">HOME</a>
-  <a href="#news">ABOUT</a>
-  <a href="#contact">BOOK A TOUR</a>
-  <a href="#contact">SERVICES</a>
-  <a href="#contact">SPECIAL EVENTS</a>     
-  <a href="#contact">FAQs</a>
-  <a href="#contact">CONTACT</a>
+  <a href="home.jsp#info">HOME</a>
+   <a href="home.jsp#logregn">ABOUT</a>
+  <a href="home.jsp#services">SERVICES</a>
+  <a href="home.jsp#helicopters">HELICOPTERS</a>     
+  <a href="home.jsp#mcqs">FAQs</a>
+  <a href="home.jsp#contactus">CONTACT</a>
 </div>
 <h2>Want to explore more!!!</h2>
  <button id="hide" style="margin-left:39%;background-color:#c2ecf0;cursor:pointer;border:1px solid black;padding:10px;">Hide the schedule</button>
@@ -271,6 +302,24 @@ text-align:center;
  </table><br><br><br><br><br>
 <a href="booking.jsp"><input type="button" value="Book A Tour"></a><hr>
 </div>
+<footer id="contactus">
+  
+  <table style="width:100%; border:1px solid black;">
+  <tr>
+	<td>
+	<div class="itemf01">
+      	&copy; Cognizant Technology Solutions Internship Program - 2019
+      </div>
+	</td>
+    <td>
+    <div class="itemf02">
+      <i class="fab fa-facebook-f"></i> <i class="fab fa-instagram"></i> <i class="fab fa-youtube"></i> <i class="fab fa-whatsapp"></i></i>
+      </div>
+    </td>
+  </tr>
+  
+</table>
+ </footer>
 </body>
 <script>
 

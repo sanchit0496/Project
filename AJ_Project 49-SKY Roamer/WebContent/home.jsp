@@ -10,6 +10,40 @@
 <link href="https://fonts.googleapis.com/css?family=Expletus+Sans|Megrim|Nunito+Sans|Sarabun" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <title>Sky Roamer</title>
+
+
+<script>
+
+function validatereg()
+{
+	
+var contactnumber = document.formreg.contactnumber.value;
+var password = document.formreg.password.value;
+var conpassword = document.formreg.conpassword.value; 
+
+if (contactnumber.length!=10) {
+	alert("Contact Number must of 10 digits");
+	return false;
+	}
+if(password.length<6)
+{ 
+alert("Password must be at least 6 characters long."); 
+return false; 
+} 
+ if (password!=conpassword)
+{ 
+alert("Confirm Password should match with the Password"); 
+return false; 
+} 	
+
+}
+
+
+
+
+</script>
+
+
 </head>
 
 <style>
@@ -48,7 +82,7 @@ body {margin:0;width:100%;}
   font-weight:600;
 }
 .spacer{
-  height:520px;
+  height:580px;
 }
 .info{
   background-color:white;
@@ -59,10 +93,10 @@ body {margin:0;width:100%;}
   top: 50%;
   left: 50%;
   margin-top:-10%;
- margin-left:-25%;
+ margin-left:-20%;
  margin-right:20%;
  margin-bottom:5%;
-  padding:40px;
+  padding:5%;
   max-height:45%;
 }
 .info h1{
@@ -255,12 +289,12 @@ margin:20px;
 <body>
 <div id="particles-js">
 <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib --> 
-<body>
+
 <div class="navbar">
   <a href="#info">HOME</a>
   <a href="#logregn">ABOUT</a>
-  <a href="#contact">SERVICES</a>
-  <a href="#contact">HELICOPTERS</a>
+  <a href="#services">SERVICES</a>
+  <a href="#helicopters">HELICOPTERS</a>
   <a href="#mcqs">FAQs</a>
   <a href="#contactus">CONTACT</a>
 </div>
@@ -269,7 +303,7 @@ margin:20px;
 <div id="info" class="info">
   <h1>Sky Roamer</h1>
   <h3>TRIP PLANNER | PHOTO FLIGHTS | SIGHTSEEING TOURS</h3><br><br>
-  <button href="#logregn" type="button" class="book">Book Your Trip Here</button>
+   <a href="#logregn"><button href="#logregn" type="button" class="book">Book Your Trip Here</button></a> 
   </div>
   </center>
   </div> 
@@ -299,40 +333,51 @@ margin:20px;
      Click Here to Register</div>
 <div id="panel1" style="display:none;">
 
-<form name="form" action="RegisterServlet" method="post" onsubmit="return validatereg()">
+<form name="formreg" action="RegisterServlet" onsubmit="return validatereg()" method="post" >
 <table>
  <tr>
  <td>First Name</td>
- <td><input type="text" name="firstname" placeholder="First Name" style="padding:5px;" /></td>
+ <td><input type="text" name="firstname" placeholder="First Name" required  style="padding:5px;" /></td>
  </tr>
  <tr>
  <td>Last Name</td>
- <td><input type="text" name="lastname" placeholder="Last Name" style="padding:5px;" /></td>
+ <td><input type="text" name="lastname" placeholder="Last Name" required style="padding:5px;" /></td>
  </tr>
  <tr>
  <td>Age</td>
- <td><input type="text" name="age" placeholder="Age" style="padding:5px;"/></td>
+ <td><input type="text" name="age" placeholder="Age" required style="padding:5px;"/></td>
  </tr>
-  <tr>
- <td>Gender</td>
- <td><input type="text" name="gender" placeholder="Gender" style="padding:5px;"/></td>
- </tr>
+   <tr>
+<td>Gender</td>
+  <td>
+   <select name="gender" style="height:20%;width:100%;padding:5px;
+  border-top:1px solid black;
+  border-left:2px solid black;
+  border-right:2px solid black;
+  border-bottom:2px solid black;">
+
+        <option value=" male" style="width:100%; height:20%;padding:5px;">Male</option>
+        <option value=" female"style="width:100%; height:20%;padding:5px;">Female</option>
+      </select>
+    
+  </td>
+  </tr>
   <tr>
  <td>Contact Number</td>
- <td><input type="text" name="contactnumber" placeholder="Contact Number" style="padding:5px;"/></td>
+ <td><input type="text" name="contactnumber" placeholder="Contact Number" required style="padding:5px;"/></td>
  </tr>
   <tr>
  <td>UserId</td>
- <td><input type="text" name="userid" placeholder="User ID" style="padding:5px;"/></td>
+ <td><input type="text" name="userid" placeholder="User ID" required style="padding:5px;"/></td>
  </tr>
   <tr>
  <td>Password</td>
- <td><input type="password" name="password" placeholder="Password" style="padding:5px;"/></td>
+ <td><input type="password" name="password" placeholder="Password" required style="padding:5px;"/></td>
  </tr>
  <tr>
  <tr>
  <td>Confirm Password</td>
- <td><input type="password" name="conpassword" placeholder="Confirm Password" style="padding:5px;"/></td>
+ <td><input type="password" name="conpassword" placeholder="Confirm Password" required style="padding:5px;"/></td>
  </tr>
  <tr>
  <tr>
@@ -360,11 +405,11 @@ margin:20px;
 <table align="center">
 <tr>
 <td>UserID</td>
-<td><input type="text" name="userid" placeholder="Enter your User Id" style="padding:5px;" /></td>
+<td><input type="text" name="userid" placeholder="Enter your User Id" required style="padding:5px;" /></td>
 </tr>
 <tr>
 <td>Password</td>
-<td><input type="password" name="password" placeholder="Enter Password" style="padding:5px;"/></td>
+<td><input type="password" name="password" placeholder="Enter Password" required style="padding:5px;"/></td>
 </tr>
 <tr> <!-- refer to the video to understand request.getAttribute() -->
 <td><span style="color:red"><%=(request.getAttribute("errMessage") == null) ? ""
@@ -378,6 +423,8 @@ type="reset" value="Reset" style="background-color:white;
  border:1px solid black;cursor:pointer; font-weight:600; padding:10px; box-shadow:0px 0px 1px 1px; margin-left:2%;"></input></td>
 </tr>
 </table>
+<br>
+<a style="font-size:12px;" href="admin.jsp">Admin Login</a>
 </form>
 
   
@@ -410,11 +457,11 @@ type="reset" value="Reset" style="background-color:white;
 	Bell 206 B3 is the most mission capable helicopter in its class.<br> It has capacity of 1 crew plus 4 passengers.
 	<br><br>
 	<strong>Capacity:</strong> 1 Crew + 4 Passengers<br>
-	<strong>Base:</strong> Rajasthan (Jaipur), Gujarat (Surat, Ahmedabad), Maharashtra (Mumbai) <br> 
+	<strong>Base:</strong> Mizoram,Manipur,Assam <br> 
 	<strong>Cruising Speed:</strong> 90 knots Endurance: 3 Hours
 	<br>
-	<strong>Range:</strong> 400Km (Minimum billing is 2 hours per day) <br>
-		<strong>Price:</strong> Rs.3500 per Hour (Minimum billing is 2 hours per day)
+
+		<strong>Price:</strong> Rs.4000 per passenger.
 	
     </div>
     </th> 
@@ -433,10 +480,10 @@ type="reset" value="Reset" style="background-color:white;
     The R44 is a single-engined helicopter with a semi-rigid two-bladed main rotor. <br> A two-bladed tail rotor and a skid landing gear. <br><br>
 	<strong>Capacity:</strong> 1 Crew + 4 Passengers
 	<br>
-	<strong>Base:</strong> Rajasthan (Jaipur), Gujarat (Surat, Ahmedabad) <br> <strong>Cruising Speed:</strong> 95 knots Endurance: 3 Hours
+	<strong>Base:</strong>Mizoram,Manipur,Assam <br> <strong>Cruising Speed:</strong> 95 knots Endurance: 3 Hours
 	<br>
-	<strong>Range:</strong> 450Km <br> 
-	<strong>Price:</strong>Rs.4500 per Hour (Minimum billing is 2 hours per day)
+	
+	<strong>Price:</strong>Rs.4000 per passenger
     </div>
     </th> 
   </tr>
@@ -454,10 +501,10 @@ type="reset" value="Reset" style="background-color:white;
 Bell 407 Helicopter is the perfect combination of reliability, comfort, speed and performance. <br><br>
 	<strong>Capacity:</strong> 2 Crew + 3 Passengers
 	<br>
-	<strong>Base:</strong>Gujarat (Surat, Ahmedabad), Maharashtra (Mumbai) <br> <strong>Cruising Speed:</strong> 120 knots Endurance: 3 Hours
+	<strong>Base:</strong>Mizoram,Manipur,Assam <br> <strong>Cruising Speed:</strong> 120 knots Endurance: 3 Hours
 	<br>
-	<strong>Range:</strong> 650Km <br> 
-	<strong>Price:</strong>Rs.6500 per Hour (Minimum billing is 2 hours per day)
+	
+	<strong>Price:</strong>Rs.4000 per passenger.
     </div>
     </th> 
   </tr>
@@ -495,15 +542,22 @@ Bell 407 Helicopter is the perfect combination of reliability, comfort, speed an
     
     
     
-    <div class="contactus">
-    
-    <table style="width:100%">
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th> 
-  </tr>
-</table>
-     
+  <div id="services" style="margin-left:8%;font-size:120%;font-family: 'Sarabun', sans-serif;margin-bottom:5%;">
+     <h1 style="font-size:185%;margin-left:2.5%;margin-bottom:25px;margin-top:-25px;"><i style="font-size:28px;" class="fab fa-servicestack"></i>   Services</h1>
+   
+  <ul>
+    <strong><li>Aerial Photography</li></strong>
+    <p>Our expert photographers will get the perfect shot of your home, business.</p>
+    <strong><li>Land Survey</li></strong>
+    <p>View your property from 500 ft. Prospective property buyers survey hundreds of acres in a fraction of the time.
+    </p>
+    <strong><li>Utility Inspection</li></strong>
+    <p>We provide an efficient, cost-effective alternative to powerline/pipeline inspection, particularly over adverse terrain or remote locations.
+</p>
+    <strong><li> Wildlife Management</li></strong>
+    <p>Population control, data collection, and vegetation surveys.
+    </p>
+  </ul>
     </div>
     
     
@@ -533,6 +587,7 @@ Bell 407 Helicopter is the perfect combination of reliability, comfort, speed an
   
 </body>
 <script>
+
 $(document).ready(function(){
 	  $("#flip1").click(function(){
 	    $("#panel1").fadeIn();
@@ -551,77 +606,6 @@ $(document).ready(function(){
 
 	particlesJS("particles-js", {"particles":{"number":{"value":400,"density":{"enable":true,"value_area":800}},"color":{"value":"#fff"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":true,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":4,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":false,"distance":500,"color":"#ffffff","opacity":0.4,"width":2},"move":{"enable":true,"speed":4,"direction":"bottom","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"bubble"},"onclick":{"enable":true,"mode":"repulse"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":0.5}},"bubble":{"distance":400,"size":4,"duration":0.3,"opacity":1,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});var count_particles, stats, update; stats = new Stats; stats.setMode(0); stats.domElement.style.position = 'absolute'; stats.domElement.style.left = '0px'; stats.domElement.style.top = '0px'; document.body.appendChild(stats.domElement); count_particles = document.querySelector('.js-count-particles'); update = function() { stats.begin(); stats.end(); if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) { count_particles.innerText = window.pJSDom[0].pJS.particles.array.length; } requestAnimationFrame(update); }; requestAnimationFrame(update);;
 
-	
-	function validatereg()
-	{ 
-	 var firstname = document.form.firstname.value;
-	 var lastname = document.form.lastname.value;
-	 var age = document.form.age.value;
-	 var gender = document.form.gender.value; 
-	 var contactnumber = document.form.contactnumber.value;
-	 var userid= document.form.userid.value;
-	 var password= document.form.password.value;
-	 var conpassword= document.form.conpassword.value;
-	 
-	 if (firstname==null || firstname=="")
-	 { 
-	 alert("first Name can't be blank"); 
-	 return false; 
-	 }
-	 else if (lastname==null || lastname=="")
-	 { 
-	 alert("lastname can't be blank"); 
-	 return false; 
-	 }
-	 else if (age ==null ||age =="")
-	 { 
-	 alert("age  can't be blank"); 
-	 return false; 
-	 }
-	 else if (gender ==null ||gender =="")
-	 { 
-	 alert("gender  can't be blank"); 
-	 return false; 
-	 }
-	 else if (contactnumber ==null ||contactnumber =="")
-	 { 
-	 alert("contactnumber can't be blank"); 
-	 return false; 
-	 }
-	 else if (userid ==null ||userid =="")
-	 { 
-	 alert("userid  can't be blank"); 
-	 return false; 
-	 }
-	 else if(password.length<6)
-	 { 
-	 alert("Password must be at least 6 characters long."); 
-	 return false; 
-	 } 
-	 else if (password!=conpassword)
-	 { 
-	 alert("Confirm Password should match with the Password"); 
-	 return false; 
-	 } 
-	 } 
-	
-	
-	
-	function validate()
-	{ 
-	var username = document.form.username.value; 
-	var password = document.form.password.value;
-	if (username==null || username=="")
-	{ 
-	alert("Username cannot be blank"); 
-	return false; 
-	}
-	else if(password==null || password=="")
-	{ 
-	alert("Password cannot be blank"); 
-	return false; 
-	} 
-	}
 </script>
 
 </html>
